@@ -8,7 +8,7 @@ export default function Hero() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-[85vh] overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 

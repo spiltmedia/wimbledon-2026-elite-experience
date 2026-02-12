@@ -48,7 +48,7 @@ export default function PricingSection() {
   const [occupancy, setOccupancy] = useState('double');
 
   return (
-    <section id="pricing" className="py-24 bg-slate-900">
+    <section id="pricing" className="py-12 bg-slate-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export default function PricingSection() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
           {packages.map((pkg, index) => (
             <motion.div
               key={index}

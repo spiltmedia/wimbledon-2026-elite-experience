@@ -8,7 +8,7 @@ export default function CTASection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section className="py-12 bg-gradient-to-b from-slate-800 to-slate-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,15 +17,15 @@ export default function CTASection() {
           transition={{ duration: 0.6 }}
           className="bg-gradient-to-r from-purple-900 to-green-900 rounded-3xl p-12 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ready for Wimbledon 2026?
           </h2>
-          <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
             Secure your spot for the championship experience of a lifetime. Limited availability!
           </p>
 
           {/* Primary CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg"
               className="bg-white text-purple-900 hover:bg-gray-100 text-lg px-10 py-6 h-auto shadow-xl"
