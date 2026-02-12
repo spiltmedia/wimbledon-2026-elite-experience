@@ -32,7 +32,7 @@ export default function TestimonialCarousel({ testimonials }) {
 
   return (
     <div className="relative bg-slate-900/50 rounded-2xl p-8 md:p-12 border border-slate-700">
-      <Quote className="w-12 h-12 text-purple-500/20 absolute top-6 left-6" />
+      <Quote className="w-12 h-12 text-[#dc2626]/20 absolute top-6 left-6" />
       
       <div className="relative min-h-[200px] flex items-center">
         <AnimatePresence mode="wait">
@@ -81,7 +81,7 @@ export default function TestimonialCarousel({ testimonials }) {
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'w-8 bg-purple-500'
+                    ? 'w-8 bg-[#dc2626]'
                     : 'w-2 bg-slate-600 hover:bg-slate-500'
                 }`}
               />

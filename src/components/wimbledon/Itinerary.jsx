@@ -85,7 +85,7 @@ export default function Itinerary() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`relative overflow-hidden rounded-2xl ${
                   item.highlight 
-                    ? 'bg-gradient-to-r from-purple-900/50 to-green-900/50 border-2 border-purple-500/50' 
+                    ? 'bg-gradient-to-r from-[#1e3a8a]/50 to-[#dc2626]/30 border-2 border-[#dc2626]/50' 
                     : 'bg-slate-800 border border-slate-700'
                 }`}
               >
@@ -95,13 +95,13 @@ export default function Itinerary() {
                     <div className="flex items-center gap-4 mb-4">
                       <div className={`w-14 h-14 rounded-xl ${
                         item.highlight 
-                          ? 'bg-gradient-to-br from-yellow-500 to-yellow-600' 
-                          : 'bg-gradient-to-br from-purple-600 to-purple-700'
+                          ? 'bg-gradient-to-br from-[#dc2626] to-[#b91c1c]' 
+                          : 'bg-gradient-to-br from-[#1e3a8a] to-[#1e40af]'
                       } flex items-center justify-center shadow-lg`}>
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-purple-400">{item.day}</div>
+                        <div className="text-sm font-semibold text-[#dc2626]">{item.day}</div>
                         <div className="text-lg font-bold text-white">{item.date}</div>
                       </div>
                     </div>

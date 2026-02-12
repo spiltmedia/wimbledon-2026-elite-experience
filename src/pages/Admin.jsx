@@ -72,7 +72,7 @@ export default function Admin() {
             onClick={() => setActiveTab('inquiries')}
             className={`px-6 py-3 font-semibold transition-colors flex items-center gap-2 ${
               activeTab === 'inquiries'
-                ? 'text-purple-400 border-b-2 border-purple-400'
+                ? 'text-[#dc2626] border-b-2 border-[#dc2626]'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -83,7 +83,7 @@ export default function Admin() {
             onClick={() => setActiveTab('testimonials')}
             className={`px-6 py-3 font-semibold transition-colors flex items-center gap-2 ${
               activeTab === 'testimonials'
-                ? 'text-purple-400 border-b-2 border-purple-400'
+                ? 'text-[#dc2626] border-b-2 border-[#dc2626]'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -96,20 +96,20 @@ export default function Admin() {
           <>
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-slate-800 border border-blue-500/30 rounded-xl p-6">
-            <div className="text-blue-400 text-sm font-semibold mb-2">New Inquiries</div>
+          <div className="bg-slate-800 border border-[#1e3a8a]/30 rounded-xl p-6">
+            <div className="text-[#1e3a8a] text-sm font-semibold mb-2">New Inquiries</div>
             <div className="text-3xl font-bold text-white">{stats.new}</div>
           </div>
           <div className="bg-slate-800 border border-yellow-500/30 rounded-xl p-6">
             <div className="text-yellow-400 text-sm font-semibold mb-2">Contacted</div>
             <div className="text-3xl font-bold text-white">{stats.contacted}</div>
           </div>
-          <div className="bg-slate-800 border border-green-500/30 rounded-xl p-6">
-            <div className="text-green-400 text-sm font-semibold mb-2">Converted</div>
+          <div className="bg-slate-800 border border-[#dc2626]/30 rounded-xl p-6">
+            <div className="text-[#dc2626] text-sm font-semibold mb-2">Converted</div>
             <div className="text-3xl font-bold text-white">{stats.converted}</div>
           </div>
-          <div className="bg-slate-800 border border-purple-500/30 rounded-xl p-6">
-            <div className="text-purple-400 text-sm font-semibold mb-2">Total Leads</div>
+          <div className="bg-slate-800 border border-slate-600/30 rounded-xl p-6">
+            <div className="text-gray-400 text-sm font-semibold mb-2">Total Leads</div>
             <div className="text-3xl font-bold text-white">{stats.total}</div>
           </div>
         </div>
@@ -174,14 +174,14 @@ export default function Admin() {
                       <div className="space-y-1 text-sm">
                         <div className="flex items-center gap-2">
                           <Mail className="w-3 h-3 text-gray-500" />
-                          <a href={`mailto:${inquiry.email}`} className="hover:text-purple-400">
+                          <a href={`mailto:${inquiry.email}`} className="hover:text-[#dc2626]">
                             {inquiry.email}
                           </a>
                         </div>
                         {inquiry.phone && (
                           <div className="flex items-center gap-2">
                             <Phone className="w-3 h-3 text-gray-500" />
-                            <a href={`tel:${inquiry.phone}`} className="hover:text-purple-400">
+                            <a href={`tel:${inquiry.phone}`} className="hover:text-[#dc2626]">
                               {inquiry.phone}
                             </a>
                           </div>

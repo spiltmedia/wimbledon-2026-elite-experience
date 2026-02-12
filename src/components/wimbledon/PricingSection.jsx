@@ -70,7 +70,7 @@ export default function PricingSection() {
               onClick={() => setOccupancy('single')}
               className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                 occupancy === 'single'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-[#dc2626] text-white'
                   : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -80,7 +80,7 @@ export default function PricingSection() {
               onClick={() => setOccupancy('double')}
               className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                 occupancy === 'double'
-                  ? 'bg-purple-600 text-white'
+                  ? 'bg-[#dc2626] text-white'
                   : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -100,12 +100,12 @@ export default function PricingSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`relative bg-slate-800 rounded-2xl overflow-hidden ${
                 pkg.popular 
-                  ? 'border-2 border-purple-500' 
+                  ? 'border-2 border-[#dc2626]' 
                   : 'border border-slate-700'
               }`}
             >
               {pkg.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-purple-600 to-purple-700 text-white text-center py-2 font-semibold flex items-center justify-center gap-2">
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white text-center py-2 font-semibold flex items-center justify-center gap-2">
                   <Star className="w-4 h-4" fill="currentColor" />
                   Most Popular
                 </div>
@@ -138,7 +138,7 @@ export default function PricingSection() {
                 </div>
 
                 <Button 
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-6 text-lg"
+                  className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white py-6 text-lg"
                   onClick={() => window.location.href = 'mailto:shantall@mlv.com?subject=Wimbledon 2026 Package - ' + pkg.hotel}
                 >
                   Select This Package
@@ -154,7 +154,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-purple-900/30 to-green-900/30 border border-purple-500/30 rounded-2xl p-8 mb-12"
+          className="bg-gradient-to-r from-[#1e3a8a]/30 to-[#dc2626]/20 border border-[#dc2626]/30 rounded-2xl p-8 mb-12"
         >
           <h3 className="text-2xl font-bold text-white mb-4 text-center">Initial Deposit</h3>
           <div className="text-center mb-4">

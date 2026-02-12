@@ -128,7 +128,7 @@ export default function InquiryForm({ isOpen, onClose, packageInterest = '' }) {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-6"
+                  className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white py-6"
                 >
                   {isSubmitting ? (
                     'Sending...'
@@ -145,7 +145,7 @@ export default function InquiryForm({ isOpen, onClose, packageInterest = '' }) {
               <div className="mt-6 pt-6 border-t border-slate-700 text-center">
                 <p className="text-gray-400 text-sm">
                   Or call us directly at{' '}
-                  <a href="tel:+18002226256" className="text-purple-400 hover:text-purple-300">
+                  <a href="tel:+18002226256" className="text-[#dc2626] hover:text-[#b91c1c]">
                     800-222-6256
                   </a>
                 </p>

@@ -64,8 +64,8 @@ export default function PackageHighlights() {
           {highlights.map((item, index) => {
             const Icon = item.icon;
             const colorClasses = item.color === 'purple' 
-              ? 'from-purple-500 to-purple-700 shadow-purple-500/20' 
-              : 'from-green-500 to-green-700 shadow-green-500/20';
+              ? 'from-[#1e3a8a] to-[#1e40af] shadow-blue-500/20' 
+              : 'from-[#dc2626] to-[#b91c1c] shadow-red-500/20';
             
             return (
               <motion.div
@@ -74,7 +74,7 @@ export default function PackageHighlights() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-800 border border-slate-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300"
+                className="bg-slate-800 border border-slate-700 rounded-2xl p-8 hover:border-[#dc2626]/50 transition-all duration-300"
               >
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colorClasses} flex items-center justify-center mb-6 shadow-lg`}>
                   <Icon className="w-8 h-8 text-white" />

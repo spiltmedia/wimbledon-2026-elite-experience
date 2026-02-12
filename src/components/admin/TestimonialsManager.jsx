@@ -108,7 +108,7 @@ export default function TestimonialsManager() {
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-purple-600 hover:bg-purple-700">
+            <Button className="bg-[#dc2626] hover:bg-[#b91c1c]">
               <Plus className="w-4 h-4 mr-2" />
               Add Testimonial
             </Button>
@@ -210,7 +210,7 @@ export default function TestimonialsManager() {
                 <Button type="button" variant="outline" onClick={resetForm} className="flex-1">
                   Cancel
                 </Button>
-                <Button type="submit" className="flex-1 bg-purple-600 hover:bg-purple-700">
+                <Button type="submit" className="flex-1 bg-[#dc2626] hover:bg-[#b91c1c]">
                   {editingTestimonial ? 'Update' : 'Create'}
                 </Button>
               </div>

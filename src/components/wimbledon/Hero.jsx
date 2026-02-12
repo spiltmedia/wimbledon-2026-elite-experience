@@ -16,7 +16,7 @@ export default function Hero() {
           alt="Wimbledon Centre Court"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/70 via-slate-900/80 to-slate-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a8a]/80 via-[#1e3a8a]/70 to-[#0f172a]"></div>
       </div>
 
       {/* Content */}
@@ -30,16 +30,17 @@ export default function Hero() {
           >
             {/* Logo */}
             <div className="mb-8">
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-                <Trophy className="w-5 h-5 text-green-400" />
-                <span className="text-white font-semibold">Major League Vacations</span>
-              </div>
+              <img 
+                src="https://mlv.com/wp-content/uploads/2021/10/MLV_Logo.png.webp"
+                alt="Major League Vacations"
+                className="h-24 mx-auto"
+              />
             </div>
 
             {/* Main Headline */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
               Wimbledon 2026
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400">
+              <span className="block text-[#dc2626]">
                 Centre Court Experience
               </span>
             </h1>
@@ -51,11 +52,11 @@ export default function Hero() {
             {/* Quick Info */}
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               <div className="flex items-center gap-2 text-gray-200">
-                <Calendar className="w-5 h-5 text-purple-400" />
+                <Calendar className="w-5 h-5 text-[#dc2626]" />
                 <span className="font-medium">June 26 - July 1, 2026</span>
               </div>
               <div className="flex items-center gap-2 text-gray-200">
-                <MapPin className="w-5 h-5 text-green-400" />
+                <MapPin className="w-5 h-5 text-[#dc2626]" />
                 <span className="font-medium">London, England</span>
               </div>
             </div>
@@ -64,7 +65,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white text-lg px-8 py-6 h-auto shadow-xl shadow-purple-500/30"
+                className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg px-8 py-6 h-auto shadow-xl"
                 onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
               >
                 Reserve with Deposit
@@ -72,7 +73,7 @@ export default function Hero() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto"
+                className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto"
                 onClick={() => setIsFormOpen(true)}
               >
                 Contact to Learn More
