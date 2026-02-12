@@ -1,0 +1,81 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+export default function CTASection() {
+  return (
+    <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-purple-900 to-green-900 rounded-3xl p-12 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready for Wimbledon 2026?
+          </h2>
+          <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+            Secure your spot for the championship experience of a lifetime. Limited availability!
+          </p>
+
+          {/* Primary CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button 
+              size="lg"
+              className="bg-white text-purple-900 hover:bg-gray-100 text-lg px-10 py-6 h-auto shadow-xl"
+              onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
+            >
+              <Calendar className="w-5 h-5 mr-2" />
+              Reserve with Deposit
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6 h-auto"
+              onClick={() => window.location.href = 'mailto:shantall@mlv.com'}
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Contact to Learn More
+            </Button>
+          </div>
+
+          {/* Contact Information */}
+          <div className="border-t border-white/20 pt-8">
+            <p className="text-white font-semibold mb-4">Questions? We're here to help!</p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-gray-200">
+              <a 
+                href="mailto:shantall@mlv.com" 
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                <span>shantall@mlv.com</span>
+              </a>
+              <div className="hidden sm:block text-white/40">|</div>
+              <a 
+                href="tel:+18002226256" 
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                <span>800-222-6256 ext. 200</span>
+              </a>
+              <div className="hidden sm:block text-white/40">|</div>
+              <a 
+                href="tel:+12673833665" 
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                <span>267-383-3665</span>
+              </a>
+            </div>
+            <p className="text-gray-300 text-sm mt-4">
+              Office Hours: Monday to Friday | 9am - 5pm EST
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
