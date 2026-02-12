@@ -11,8 +11,8 @@ const hotels = [
     location: 'Russell Square, Bloomsbury',
     rating: 8.5,
     stars: 4,
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80',
+    image: 'https://digital.ihg.com/is/image/ihg/holiday-inn-london-5572933831-4x3',
+    heroImage: 'https://digital.ihg.com/is/image/ihg/holiday-inn-london-6240528914-16x5',
     description: 'A modern 4-star hotel perfectly positioned in the heart of historic Bloomsbury, just steps from the British Museum and London\'s most iconic attractions.',
     highlights: [
       'Only 150m from Russell Square Tube Station',
@@ -35,8 +35,8 @@ const hotels = [
     location: 'Marylebone, West End',
     rating: 8.6,
     stars: 4,
-    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=80',
-    heroImage: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&q=80',
+    image: 'https://thewelbeckhotel.com/wp-content/uploads/2024/09/10e26babc2154ce6e14e07076212c675.jpeg',
+    heroImage: 'https://thewelbeckhotel.com/wp-content/uploads/2024/11/IHG_Deluxe-Room-4-1800x1027.jpg',
     description: 'A sophisticated 4-star boutique hotel in London\'s prestigious Marylebone district, offering 164 modern rooms with wellness-focused amenities and prime West End access.',
     highlights: [
       'Prime West End location near Oxford Circus',
