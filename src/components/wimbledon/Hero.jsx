@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import InquiryForm from './InquiryForm';
+import MultiStepBookingForm from './MultiStepBookingForm';
 
 export default function Hero() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -66,17 +66,17 @@ export default function Hero() {
               <Button 
                 size="lg"
                 className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg px-8 py-6 h-auto shadow-xl"
-                onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
+                onClick={() => setIsFormOpen(true)}
               >
-                Reserve with Deposit
+                Book Your Package
               </Button>
               <Button 
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto"
-                onClick={() => setIsFormOpen(true)}
+                onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
               >
-                Contact to Learn More
+                View Packages
               </Button>
             </div>
 
@@ -107,7 +107,7 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      <InquiryForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+      <MultiStepBookingForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import InquiryForm from './InquiryForm';
+import MultiStepBookingForm from './MultiStepBookingForm';
 
 export default function CTASection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -29,19 +29,19 @@ export default function CTASection() {
             <Button 
               size="lg"
               className="bg-white text-purple-900 hover:bg-gray-100 text-lg px-10 py-6 h-auto shadow-xl"
-              onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
+              onClick={() => setIsFormOpen(true)}
             >
               <Calendar className="w-5 h-5 mr-2" />
-              Reserve with Deposit
+              Book Your Package
             </Button>
             <Button 
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6 h-auto"
-              onClick={() => setIsFormOpen(true)}
+              onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
             >
               <Mail className="w-5 h-5 mr-2" />
-              Contact to Learn More
+              View Packages
             </Button>
           </div>
 
@@ -80,7 +80,7 @@ export default function CTASection() {
         </motion.div>
       </div>
 
-      <InquiryForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+      <MultiStepBookingForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </section>
   );
 }

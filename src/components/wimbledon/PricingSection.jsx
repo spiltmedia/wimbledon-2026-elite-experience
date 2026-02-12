@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import MultiStepBookingForm from './MultiStepBookingForm';
 
 const packages = [
   {
@@ -46,6 +47,8 @@ const included = [
 
 export default function PricingSection() {
   const [occupancy, setOccupancy] = useState('double');
+  const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState(null);
 
   return (
     <section id="pricing" className="py-12 bg-slate-900">
@@ -139,7 +142,13 @@ export default function PricingSection() {
 
                 <Button 
                   className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white py-6 text-lg"
-                  onClick={() => window.location.href = 'mailto:shantall@mlv.com?subject=Wimbledon 2026 Package - ' + pkg.hotel}
+                  onClick={() => {
+                    const packageId = pkg.hotel.includes('Welbeck') 
+                      ? (occupancy === 'single' ? 'welbeck-single' : 'welbeck-double')
+                      : (occupancy === 'single' ? 'holiday-inn-single' : 'holiday-inn-double');
+                    setSelectedPackage(packageId);
+                    setIsBookingFormOpen(true);
+                  }}
                 >
                   Select This Package
                 </Button>
@@ -187,6 +196,15 @@ export default function PricingSection() {
             Flights can be added from your preferred departure city
           </p>
         </motion.div>
+
+        <MultiStepBookingForm 
+          isOpen={isBookingFormOpen} 
+          onClose={() => {
+            setIsBookingFormOpen(false);
+            setSelectedPackage(null);
+          }}
+          preSelectedPackage={selectedPackage}
+        />
       </div>
     </section>
   );
