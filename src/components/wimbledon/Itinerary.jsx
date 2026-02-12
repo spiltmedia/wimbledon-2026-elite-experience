@@ -60,8 +60,7 @@ const itinerary = [
       { name: 'British Museum', url: 'https://www.britishmuseum.org' },
       { name: 'Covent Garden', url: 'https://www.coventgarden.london' },
       { name: 'Marylebone Village', url: 'https://www.marylebonevillage.com' }
-    ],
-    compact: true
+    ]
   },
   {
     day: 'Day 4',
@@ -171,7 +170,7 @@ export default function Itinerary() {
                       : 'bg-slate-800 border border-slate-700'
                   }`}
                 >
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 ${item.compact ? 'p-4' : 'p-6'}`}>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
                     {/* Content */}
                     <div className="flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-3">
@@ -240,7 +239,7 @@ export default function Itinerary() {
                     </div>
 
                     {/* Image */}
-                    <div className={`relative ${item.compact ? 'h-32 lg:h-56' : 'h-48 lg:h-auto'} rounded-xl overflow-hidden`}>
+                    <div className="relative h-48 lg:h-auto rounded-xl overflow-hidden">
                       <img 
                         src={item.image}
                         alt={item.title}
