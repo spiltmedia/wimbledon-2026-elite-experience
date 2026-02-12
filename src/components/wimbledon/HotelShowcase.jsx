@@ -74,7 +74,7 @@ export default function HotelShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Your London Accommodations
@@ -84,7 +84,7 @@ export default function HotelShowcase() {
           </p>
         </motion.div>
 
-        <div className="space-y-16">
+        <div className="space-y-10">
           {hotels.map((hotel, index) => (
             <motion.div
               key={index}
