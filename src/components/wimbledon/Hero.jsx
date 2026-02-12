@@ -73,7 +73,7 @@ export default function Hero() {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto"
+                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm text-lg px-8 py-6 h-auto transition-all"
                 onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
               >
                 View Packages

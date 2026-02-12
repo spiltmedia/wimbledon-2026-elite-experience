@@ -37,7 +37,7 @@ export default function CTASection() {
             <Button 
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6 h-auto"
+              className="border-2 border-white text-white hover:bg-white hover:text-purple-900 text-lg px-10 py-6 h-auto transition-all"
               onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
             >
               <Mail className="w-5 h-5 mr-2" />
