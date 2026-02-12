@@ -94,12 +94,12 @@ export default function HotelShowcase() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className={`relative overflow-hidden rounded-3xl ${
                 hotel.premium 
-                  ? 'bg-gradient-to-br from-purple-900/40 to-slate-800 border-2 border-purple-500/30' 
+                  ? 'bg-gradient-to-br from-[#1e3a8a]/40 to-slate-800 border-2 border-[#dc2626]/30' 
                   : 'bg-slate-800 border border-slate-700'
               }`}
             >
               {hotel.premium && (
-                <div className="absolute top-6 right-6 bg-purple-600 text-white px-4 py-2 rounded-full font-semibold text-sm z-10 shadow-lg">
+                <div className="absolute top-6 right-6 bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white px-4 py-2 rounded-full font-semibold text-sm z-10 shadow-lg">
                   Most Popular Choice
                 </div>
               )}
@@ -161,8 +161,8 @@ export default function HotelShowcase() {
                       const Icon = amenity.icon;
                       return (
                         <div key={i} className="flex items-center gap-2">
-                          <div className="w-8 h-8 rounded-lg bg-purple-600/20 flex items-center justify-center">
-                            <Icon className="w-4 h-4 text-purple-400" />
+                          <div className="w-8 h-8 rounded-lg bg-[#1e3a8a]/20 flex items-center justify-center">
+                            <Icon className="w-4 h-4 text-[#1e3a8a]" />
                           </div>
                           <span className="text-gray-300 text-sm">{amenity.label}</span>
                         </div>
