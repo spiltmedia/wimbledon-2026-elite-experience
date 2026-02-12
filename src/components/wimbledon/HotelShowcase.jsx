@@ -1,6 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, MapPin, Wifi, Dumbbell, Coffee, Utensils, Clock, Award } from 'lucide-react';
+import { base44 } from '@/api/base44Client';
+import { useQuery } from '@tanstack/react-query';
+import TestimonialCarousel from './TestimonialCarousel';
 
 const hotels = [
   {
@@ -55,6 +58,14 @@ const hotels = [
 ];
 
 export default function HotelShowcase() {
+  const { data: testimonials = [] } = useQuery({
+    queryKey: ['testimonials'],
+    queryFn: async () => {
+      const allTestimonials = await base44.entities.Testimonial.filter({ is_active: true });
+      return allTestimonials;
+    }
+  });
+
   return (
     <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -159,12 +170,12 @@ export default function HotelShowcase() {
                     })}
                   </div>
 
-                  {/* Testimonial */}
-                  <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
-                    <p className="text-gray-300 italic text-sm leading-relaxed">
-                      {hotel.testimonial}
-                    </p>
-                  </div>
+                  {/* Testimonials Carousel */}
+                  <TestimonialCarousel 
+                    testimonials={testimonials.filter(t => 
+                      t.hotel === hotel.name || t.hotel === 'Both'
+                    )} 
+                  />
                 </div>
               </div>
 

@@ -18,8 +18,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Mail, Phone, Calendar, Filter } from 'lucide-react';
+import { Mail, Phone, Calendar, Filter, MessageSquare, Users } from 'lucide-react';
 import { format } from 'date-fns';
+import TestimonialsManager from '../components/admin/TestimonialsManager';
 
 const statusColors = {
   new: 'bg-blue-100 text-blue-800 border-blue-200',
@@ -29,6 +30,7 @@ const statusColors = {
 };
 
 export default function Admin() {
+  const [activeTab, setActiveTab] = useState('inquiries');
   const [statusFilter, setStatusFilter] = useState('all');
   const queryClient = useQueryClient();
 
@@ -60,12 +62,40 @@ export default function Admin() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-2">Wimbledon Inquiries</h1>
-          <p className="text-gray-400">Manage leads and track conversions</p>
+          <h1 className="text-3xl font-bold text-white mb-2">Admin Dashboard</h1>
+          <p className="text-gray-400">Manage leads, testimonials, and content</p>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        {/* Tabs */}
+        <div className="flex gap-2 mb-8 border-b border-slate-700">
+          <button
+            onClick={() => setActiveTab('inquiries')}
+            className={`px-6 py-3 font-semibold transition-colors flex items-center gap-2 ${
+              activeTab === 'inquiries'
+                ? 'text-purple-400 border-b-2 border-purple-400'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            <Users className="w-5 h-5" />
+            Inquiries
+          </button>
+          <button
+            onClick={() => setActiveTab('testimonials')}
+            className={`px-6 py-3 font-semibold transition-colors flex items-center gap-2 ${
+              activeTab === 'testimonials'
+                ? 'text-purple-400 border-b-2 border-purple-400'
+                : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            <MessageSquare className="w-5 h-5" />
+            Testimonials
+          </button>
+        </div>
+
+        {activeTab === 'inquiries' && (
+          <>
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <div className="bg-slate-800 border border-blue-500/30 rounded-xl p-6">
             <div className="text-blue-400 text-sm font-semibold mb-2">New Inquiries</div>
             <div className="text-3xl font-bold text-white">{stats.new}</div>
@@ -193,6 +223,10 @@ export default function Admin() {
             </TableBody>
           </Table>
         </div>
+          </>
+        )}
+
+        {activeTab === 'testimonials' && <TestimonialsManager />}
       </div>
     </div>
   );
