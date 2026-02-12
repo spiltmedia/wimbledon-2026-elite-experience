@@ -203,7 +203,7 @@ export default function HotelShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-8 text-center"
         >
           <p className="text-gray-400 text-lg">
             Both hotels offer exceptional Central London locations, making it easy to experience 
