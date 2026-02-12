@@ -56,24 +56,24 @@ const itinerary = [
 
 export default function Itinerary() {
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
             Your 6-Day Journey
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             From London's iconic landmarks to Centre Court's championship action
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {itinerary.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -89,37 +89,37 @@ export default function Itinerary() {
                     : 'bg-slate-800 border border-slate-700'
                 }`}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
                   {/* Content */}
                   <div className="flex flex-col justify-center">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-14 h-14 rounded-xl ${
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-12 h-12 rounded-xl ${
                         item.highlight 
                           ? 'bg-gradient-to-br from-[#dc2626] to-[#b91c1c]' 
                           : 'bg-gradient-to-br from-[#1e3a8a] to-[#1e40af]'
                       } flex items-center justify-center shadow-lg`}>
-                        <Icon className="w-7 h-7 text-white" />
+                        <Icon className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <div className="text-sm font-semibold text-[#dc2626]">{item.day}</div>
-                        <div className="text-lg font-bold text-white">{item.date}</div>
+                        <div className="text-xs font-semibold text-[#dc2626]">{item.day}</div>
+                        <div className="text-base font-bold text-white">{item.date}</div>
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                    <p className="text-gray-300 leading-relaxed text-sm">{item.description}</p>
                     
                     {item.highlight && (
-                      <div className="mt-6 space-y-2">
-                        <div className="flex items-center gap-2 text-sm text-green-400">
-                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                      <div className="mt-4 space-y-1">
+                        <div className="flex items-center gap-2 text-xs text-green-400">
+                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
                           <span>Debenture tickets on Centre Court</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-green-400">
-                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <div className="flex items-center gap-2 text-xs text-green-400">
+                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
                           <span>Access to exclusive VIP lounges & restaurants</span>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-green-400">
-                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        <div className="flex items-center gap-2 text-xs text-green-400">
+                          <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
                           <span>£15 Travel Card included</span>
                         </div>
                       </div>
@@ -127,7 +127,7 @@ export default function Itinerary() {
                   </div>
 
                   {/* Image */}
-                  <div className="relative h-64 lg:h-auto rounded-xl overflow-hidden">
+                  <div className="relative h-48 lg:h-auto rounded-xl overflow-hidden">
                     <img 
                       src={item.image}
                       alt={item.title}
