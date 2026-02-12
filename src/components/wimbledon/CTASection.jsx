@@ -28,10 +28,10 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg"
-              className="bg-white text-purple-900 hover:bg-gray-100 text-lg px-10 py-6 h-auto shadow-xl"
+              className="bg-white text-purple-900 hover:bg-gray-100 text-lg px-10 py-6 h-auto shadow-xl hover:text-purple-900"
               onClick={() => setIsFormOpen(true)}
             >
-              <Calendar className="w-5 h-5 mr-2" />
+              <Calendar className="w-5 h-5 mr-2 text-purple-900" />
               Book Your Package
             </Button>
             <Button 
