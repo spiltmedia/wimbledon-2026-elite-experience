@@ -60,7 +60,8 @@ const itinerary = [
       { name: 'British Museum', url: 'https://www.britishmuseum.org' },
       { name: 'Covent Garden', url: 'https://www.coventgarden.london' },
       { name: 'Marylebone Village', url: 'https://www.marylebonevillage.com' }
-    ]
+    ],
+    customHeight: '533px'
   },
   {
     day: 'Day 4',
@@ -239,7 +240,7 @@ export default function Itinerary() {
                     </div>
 
                     {/* Image */}
-                    <div className="relative h-48 lg:h-auto rounded-xl overflow-hidden">
+                    <div className="relative h-48 lg:h-auto rounded-xl overflow-hidden" style={item.customHeight ? { height: item.customHeight } : {}}>
                       <img 
                         src={item.image}
                         alt={item.title}
