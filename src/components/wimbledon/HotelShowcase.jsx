@@ -11,8 +11,8 @@ const hotels = [
     location: 'Russell Square, Bloomsbury',
     rating: 8.5,
     stars: 4,
-    image: 'https://images.trvl-media.com/lodging/1000000/30000/20200/20115/11fbf23d.jpg?impolicy=resizecrop&rw=1200&ra=fit',
-    heroImage: 'https://images.trvl-media.com/lodging/1000000/30000/20200/20115/0e914d08.jpg?impolicy=resizecrop&rw=1200&ra=fit',
+    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/646ecde73_HolidayInn.jpg',
+    heroImage: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/646ecde73_HolidayInn.jpg',
     description: 'A modern 4-star hotel perfectly positioned in the heart of historic Bloomsbury, just steps from the British Museum and London\'s most iconic attractions.',
     highlights: [
       'Only 150m from Russell Square Tube Station',
