@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import InquiryForm from './InquiryForm';
 
 export default function CTASection() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
@@ -35,7 +38,7 @@ export default function CTASection() {
               size="lg"
               variant="outline"
               className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6 h-auto"
-              onClick={() => window.location.href = 'mailto:shantall@mlv.com'}
+              onClick={() => setIsFormOpen(true)}
             >
               <Mail className="w-5 h-5 mr-2" />
               Contact to Learn More
@@ -76,6 +79,8 @@ export default function CTASection() {
           </div>
         </motion.div>
       </div>
+
+      <InquiryForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </section>
   );
 }

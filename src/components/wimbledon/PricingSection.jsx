@@ -139,10 +139,7 @@ export default function PricingSection() {
 
                 <Button 
                   className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white py-6 text-lg"
-                  onClick={() => {
-                    // Link to payment site - placeholder for now
-                    window.location.href = 'mailto:shantall@mlv.com?subject=Wimbledon 2026 Package - ' + pkg.hotel;
-                  }}
+                  onClick={() => window.location.href = 'mailto:shantall@mlv.com?subject=Wimbledon 2026 Package - ' + pkg.hotel}
                 >
                   Select This Package
                 </Button>

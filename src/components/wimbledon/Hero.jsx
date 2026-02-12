@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import InquiryForm from './InquiryForm';
 
 export default function Hero() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
     <div className="relative h-screen overflow-hidden">
       {/* Background Image with Overlay */}
@@ -70,7 +73,7 @@ export default function Hero() {
                 size="lg"
                 variant="outline"
                 className="border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm text-lg px-8 py-6 h-auto"
-                onClick={() => window.location.href = 'mailto:shantall@mlv.com'}
+                onClick={() => setIsFormOpen(true)}
               >
                 Contact to Learn More
               </Button>
@@ -102,6 +105,8 @@ export default function Hero() {
           <div className="w-1 h-3 bg-white/60 rounded-full mt-2"></div>
         </div>
       </motion.div>
+
+      <InquiryForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
     </div>
   );
 }
