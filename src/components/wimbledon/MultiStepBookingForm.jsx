@@ -395,7 +395,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                   <Button
                     onClick={handleBack}
                     variant="outline"
-                    className="flex-1 border-slate-600 text-white hover:bg-slate-800"
+                    className="flex-1 bg-slate-800 border-slate-600 text-white hover:bg-slate-700"
                   >
                     <ChevronLeft className="w-4 h-4 mr-2" />
                     Back
