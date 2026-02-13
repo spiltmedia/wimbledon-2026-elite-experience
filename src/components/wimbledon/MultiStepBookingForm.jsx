@@ -204,7 +204,11 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                       {packages.map((pkg) => (
                         <button
                           key={pkg.id}
-                          onClick={() => setFormData({ ...formData, selectedPackage: pkg.id })}
+                          onClick={() => setFormData({ 
+                            ...formData, 
+                            selectedPackage: pkg.id,
+                            numberOfTravelers: pkg.occupancy === 'Double' ? '2' : '1'
+                          })}
                           className={`relative p-4 rounded-xl border-2 text-left transition-all ${
                             formData.selectedPackage === pkg.id
                               ? 'border-[#dc2626] bg-[#dc2626]/10'
@@ -305,9 +309,8 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                             <SelectValue />
                           </SelectTrigger>
                           <SelectContent>
-                            {[1, 2, 3, 4, 5, 6].map(num => (
-                              <SelectItem key={num} value={String(num)}>{num} {num === 1 ? 'Person' : 'People'}</SelectItem>
-                            ))}
+                            <SelectItem value="1">1 Person</SelectItem>
+                            <SelectItem value="2">2 People</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
