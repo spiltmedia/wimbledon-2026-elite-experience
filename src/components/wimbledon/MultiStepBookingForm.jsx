@@ -14,28 +14,28 @@ const packages = [
     id: 'holiday-inn-single',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Single',
-    price: 6550,
+    price: 6799,
     available: 8
   },
   {
     id: 'holiday-inn-double',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
-    price: 5350,
+    price: 5553,
     available: 12
   },
   {
     id: 'welbeck-single',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Single',
-    price: 6750,
+    price: 7007,
     available: 5
   },
   {
     id: 'welbeck-double',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
-    price: 5450,
+    price: 5657,
     available: 10
   }
 ];

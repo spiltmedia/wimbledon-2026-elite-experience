@@ -88,7 +88,7 @@ export default function Hero() {
               className="mt-12"
             >
               <p className="text-gray-300 text-lg">
-                Packages from <span className="text-3xl font-bold text-white">$5,350</span> per person
+                Packages from <span className="text-3xl font-bold text-white">$5,553</span> per person
               </p>
             </motion.div>
           </motion.div>
