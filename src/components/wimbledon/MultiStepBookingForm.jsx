@@ -21,21 +21,21 @@ const packages = [
     id: 'holiday-inn-double',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
-    price: 5554,
+    price: 5554.50,
     available: 12
   },
   {
     id: 'welbeck-single',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Single',
-    price: 7007,
+    price: 7009,
     available: 5
   },
   {
     id: 'welbeck-double',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
-    price: 5658,
+    price: 5657.50,
     available: 10
   }
 ];
@@ -315,10 +315,10 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           Reserve your spot with a deposit today
                         </p>
                         <div className="text-3xl font-bold text-white">
-                          ${selectedPackageData?.occupancy === 'Double' ? '7,050' : '3,525'}
+                          ${selectedPackageData?.occupancy === 'Double' ? '7,049' : '3,525'}
                         </div>
                         <p className="text-sm text-gray-400 mt-1">
-                          {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Deposit • Balance due 60 days before travel
+                          {selectedPackageData?.occupancy === 'Double' ? '$3,524.50 per person • ' : ''}Deposit • Balance due 60 days before travel
                         </p>
                       </button>
                     </div>
@@ -447,11 +447,11 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                             ? selectedPackageData?.occupancy === 'Double'
                               ? `$${(selectedPackageData.price * 2).toLocaleString()}`
                               : `$${selectedPackageData?.price.toLocaleString()}`
-                            : selectedPackageData?.occupancy === 'Double' ? '$7,050' : '$3,525'}
+                            : selectedPackageData?.occupancy === 'Double' ? '$7,049' : '$3,525'}
                         </p>
                         {formData.paymentChoice === 'deposit' ? (
                           <p className="text-sm text-gray-400 mt-1">
-                            {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Balance due 60 days before travel
+                            {selectedPackageData?.occupancy === 'Double' ? '$3,524.50 per person • ' : ''}Balance due 60 days before travel
                           </p>
                         ) : selectedPackageData?.occupancy === 'Double' && (
                           <p className="text-sm text-gray-400 mt-1">
