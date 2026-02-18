@@ -10,7 +10,7 @@ const packages = [
     location: 'Russell Square',
     rating: '4-Star',
     singlePrice: 6799,
-    doublePrice: 5553,
+    doublePrice: 5554,
     features: [
       '150m from Russell Square Tube',
       'Walking distance to British Museum',
@@ -24,7 +24,7 @@ const packages = [
     location: 'Marylebone',
     rating: '4-Star Boutique',
     singlePrice: 7007,
-    doublePrice: 5657,
+    doublePrice: 5658,
     features: [
       'Prime West End location',
       'Near Selfridges & Oxford Street',
@@ -167,7 +167,7 @@ export default function PricingSection() {
         >
           <h3 className="text-2xl font-bold text-white mb-4 text-center">Initial Deposit</h3>
           <div className="text-center mb-4">
-            <div className="text-5xl font-bold text-white mb-2">FROM $3,524</div>
+            <div className="text-5xl font-bold text-white mb-2">FROM $3,525</div>
             <p className="text-gray-300 text-lg">per person</p>
           </div>
           <p className="text-gray-400 text-center max-w-2xl mx-auto">

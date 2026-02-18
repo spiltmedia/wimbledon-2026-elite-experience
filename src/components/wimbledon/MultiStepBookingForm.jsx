@@ -21,7 +21,7 @@ const packages = [
     id: 'holiday-inn-double',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
-    price: 5553,
+    price: 5554,
     available: 12
   },
   {
@@ -35,7 +35,7 @@ const packages = [
     id: 'welbeck-double',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
-    price: 5657,
+    price: 5658,
     available: 10
   }
 ];
