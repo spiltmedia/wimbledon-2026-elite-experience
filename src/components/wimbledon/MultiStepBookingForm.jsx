@@ -41,7 +41,7 @@ const packages = [
 ];
 
 export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPackage = null }) {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(preSelectedPackage ? 2 : 1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   
@@ -72,7 +72,8 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
   };
 
   const handleBack = () => {
-    if (currentStep > 1) {
+    const minStep = preSelectedPackage ? 2 : 1;
+    if (currentStep > minStep) {
       setCurrentStep(currentStep - 1);
     }
   };
@@ -103,7 +104,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
   };
 
   const handleClose = () => {
-    setCurrentStep(1);
+    setCurrentStep(preSelectedPackage ? 2 : 1);
     setIsSuccess(false);
     setFormData({
       selectedPackage: preSelectedPackage || '',
@@ -489,7 +490,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
 
               {/* Navigation Buttons */}
               <div className="flex gap-3 mt-8 pt-6 border-t border-slate-700">
-                {currentStep > 1 && (
+                {currentStep > (preSelectedPackage ? 2 : 1) && (
                   <Button
                     onClick={handleBack}
                     variant="outline"
