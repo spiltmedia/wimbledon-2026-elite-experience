@@ -21,7 +21,7 @@ const packages = [
     id: 'holiday-inn-double',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
-    price: 5554.50,
+    price: 5555,
     available: 12
   },
   {
@@ -35,7 +35,7 @@ const packages = [
     id: 'welbeck-double',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
-    price: 5657.50,
+    price: 5658,
     available: 10
   }
 ];
@@ -232,7 +232,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           </div>
                           
                           <div className="text-2xl font-bold text-white mb-2">
-                            ${pkg.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                            ${pkg.price.toLocaleString()}
                             <span className="text-sm text-gray-400 font-normal"> per person</span>
                           </div>
                           
@@ -319,7 +319,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           ${selectedPackageData?.occupancy === 'Double' ? '7,049' : '3,525'}
                         </div>
                         <p className="text-sm text-gray-400 mt-1">
-                          {selectedPackageData?.occupancy === 'Double' ? '$3,524.50 per person • ' : ''}Deposit • Balance due 60 days before travel
+                          {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Deposit • Balance due 60 days before travel
                         </p>
                       </button>
                     </div>
@@ -452,7 +452,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         </p>
                         {formData.paymentChoice === 'deposit' ? (
                           <p className="text-sm text-gray-400 mt-1">
-                            {selectedPackageData?.occupancy === 'Double' ? '$3,524.50 per person • ' : ''}Balance due 60 days before travel
+                            {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Balance due 60 days before travel
                           </p>
                         ) : selectedPackageData?.occupancy === 'Double' && (
                           <p className="text-sm text-gray-400 mt-1">
