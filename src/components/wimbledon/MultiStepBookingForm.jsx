@@ -285,9 +285,15 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           Complete payment now and secure your booking
                         </p>
                         <div className="text-3xl font-bold text-white">
-                          ${selectedPackageData?.price.toLocaleString()}
+                          ${selectedPackageData?.occupancy === 'Double' 
+                            ? (selectedPackageData.price * 2).toLocaleString()
+                            : selectedPackageData?.price.toLocaleString()}
                         </div>
-                        <p className="text-sm text-gray-400 mt-1">Total amount</p>
+                        <p className="text-sm text-gray-400 mt-1">
+                          {selectedPackageData?.occupancy === 'Double' 
+                            ? `$${selectedPackageData.price.toLocaleString()} per person • ` 
+                            : ''}Total amount
+                        </p>
                       </button>
 
                       <button
@@ -438,12 +444,18 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         </p>
                         <p className="text-2xl font-bold text-white mt-1">
                           {formData.paymentChoice === 'full' 
-                            ? `$${selectedPackageData?.price.toLocaleString()}`
+                            ? selectedPackageData?.occupancy === 'Double'
+                              ? `$${(selectedPackageData.price * 2).toLocaleString()}`
+                              : `$${selectedPackageData?.price.toLocaleString()}`
                             : selectedPackageData?.occupancy === 'Double' ? '$7,050' : '$3,525'}
                         </p>
-                        {formData.paymentChoice === 'deposit' && (
+                        {formData.paymentChoice === 'deposit' ? (
                           <p className="text-sm text-gray-400 mt-1">
                             {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Balance due 60 days before travel
+                          </p>
+                        ) : selectedPackageData?.occupancy === 'Double' && (
+                          <p className="text-sm text-gray-400 mt-1">
+                            ${selectedPackageData.price.toLocaleString()} per person
                           </p>
                         )}
                       </div>
