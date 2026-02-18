@@ -232,7 +232,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           </div>
                           
                           <div className="text-2xl font-bold text-white mb-2">
-                            ${pkg.price.toLocaleString()}
+                            ${pkg.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                             <span className="text-sm text-gray-400 font-normal"> per person</span>
                           </div>
                           
