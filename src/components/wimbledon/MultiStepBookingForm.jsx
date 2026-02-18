@@ -47,6 +47,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
   
   const [formData, setFormData] = useState({
     selectedPackage: preSelectedPackage || '',
+    paymentChoice: 'full',
     name: '',
     email: '',
     phone: '',
@@ -57,14 +58,15 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
 
   const steps = [
     { number: 1, title: 'Select Package', icon: Hotel },
-    { number: 2, title: 'Your Details', icon: User },
-    { number: 3, title: 'Confirmation', icon: CheckCircle }
+    { number: 2, title: 'Payment Choice', icon: CheckCircle },
+    { number: 3, title: 'Your Details', icon: User },
+    { number: 4, title: 'Confirmation', icon: CheckCircle }
   ];
 
   const selectedPackageData = packages.find(pkg => pkg.id === formData.selectedPackage);
 
   const handleNext = () => {
-    if (currentStep < 3) {
+    if (currentStep < 4) {
       setCurrentStep(currentStep + 1);
     }
   };
@@ -105,6 +107,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
     setIsSuccess(false);
     setFormData({
       selectedPackage: preSelectedPackage || '',
+      paymentChoice: 'full',
       name: '',
       email: '',
       phone: '',
@@ -116,7 +119,8 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
   };
 
   const canProceedStep1 = formData.selectedPackage !== '';
-  const canProceedStep2 = formData.name && formData.email && formData.phone && formData.travelDates;
+  const canProceedStep2 = formData.paymentChoice !== '';
+  const canProceedStep3 = formData.name && formData.email && formData.phone && formData.travelDates;
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
@@ -250,8 +254,73 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                   </motion.div>
                 )}
 
-                {/* Step 2: Contact Information */}
+                {/* Step 2: Payment Choice */}
                 {currentStep === 2 && (
+                  <motion.div
+                    key="step2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="space-y-4"
+                  >
+                    <h3 className="text-xl font-bold mb-6">Choose Your Payment Option</h3>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <button
+                        onClick={() => setFormData({ ...formData, paymentChoice: 'full' })}
+                        className={`relative p-6 rounded-xl border-2 text-left transition-all ${
+                          formData.paymentChoice === 'full'
+                            ? 'border-[#dc2626] bg-[#dc2626]/10'
+                            : 'border-slate-700 hover:border-slate-600 bg-slate-800'
+                        }`}
+                      >
+                        {formData.paymentChoice === 'full' && (
+                          <div className="absolute top-4 right-4 w-6 h-6 bg-[#dc2626] rounded-full flex items-center justify-center">
+                            <Check className="w-4 h-4 text-white" />
+                          </div>
+                        )}
+                        
+                        <h4 className="text-xl font-bold text-white mb-2">Pay in Full</h4>
+                        <p className="text-gray-400 text-sm mb-4">
+                          Complete payment now and secure your booking
+                        </p>
+                        <div className="text-3xl font-bold text-white">
+                          ${selectedPackageData?.price.toLocaleString()}
+                        </div>
+                        <p className="text-sm text-gray-400 mt-1">Total amount</p>
+                      </button>
+
+                      <button
+                        onClick={() => setFormData({ ...formData, paymentChoice: 'deposit' })}
+                        className={`relative p-6 rounded-xl border-2 text-left transition-all ${
+                          formData.paymentChoice === 'deposit'
+                            ? 'border-[#dc2626] bg-[#dc2626]/10'
+                            : 'border-slate-700 hover:border-slate-600 bg-slate-800'
+                        }`}
+                      >
+                        {formData.paymentChoice === 'deposit' && (
+                          <div className="absolute top-4 right-4 w-6 h-6 bg-[#dc2626] rounded-full flex items-center justify-center">
+                            <Check className="w-4 h-4 text-white" />
+                          </div>
+                        )}
+                        
+                        <h4 className="text-xl font-bold text-white mb-2">Pay Deposit</h4>
+                        <p className="text-gray-400 text-sm mb-4">
+                          Reserve your spot with a deposit today
+                        </p>
+                        <div className="text-3xl font-bold text-white">
+                          $3,525
+                        </div>
+                        <p className="text-sm text-gray-400 mt-1">
+                          Deposit • Balance due 60 days before travel
+                        </p>
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Step 3: Contact Information */}
+                {currentStep === 3 && (
                   <motion.div
                     key="step2"
                     initial={{ opacity: 0, x: 20 }}
@@ -341,8 +410,8 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                   </motion.div>
                 )}
 
-                {/* Step 3: Confirmation */}
-                {currentStep === 3 && (
+                {/* Step 4: Confirmation */}
+                {currentStep === 4 && (
                   <motion.div
                     key="step3"
                     initial={{ opacity: 0, x: 20 }}
@@ -360,6 +429,23 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         <p className="text-2xl font-bold text-[#dc2626] mt-2">
                           ${selectedPackageData?.price.toLocaleString()} per person
                         </p>
+                      </div>
+                      
+                      <div className="border-t border-slate-700 pt-4">
+                        <h4 className="text-sm text-gray-400 mb-2">Payment Option</h4>
+                        <p className="text-white font-semibold">
+                          {formData.paymentChoice === 'full' ? 'Pay in Full' : 'Deposit Payment'}
+                        </p>
+                        <p className="text-2xl font-bold text-white mt-1">
+                          {formData.paymentChoice === 'full' 
+                            ? `$${selectedPackageData?.price.toLocaleString()}`
+                            : '$3,525'}
+                        </p>
+                        {formData.paymentChoice === 'deposit' && (
+                          <p className="text-sm text-gray-400 mt-1">
+                            Balance due 60 days before travel
+                          </p>
+                        )}
                       </div>
                       
                       <div className="border-t border-slate-700 pt-4">
@@ -402,10 +488,14 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                   </Button>
                 )}
                 
-                {currentStep < 3 ? (
+                {currentStep < 4 ? (
                   <Button
                     onClick={handleNext}
-                    disabled={currentStep === 1 ? !canProceedStep1 : !canProceedStep2}
+                    disabled={
+                      currentStep === 1 ? !canProceedStep1 
+                      : currentStep === 2 ? !canProceedStep2 
+                      : !canProceedStep3
+                    }
                     className="flex-1 bg-[#dc2626] hover:bg-[#b91c1c]"
                   >
                     Continue
