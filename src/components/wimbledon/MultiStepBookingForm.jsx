@@ -309,10 +309,10 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           Reserve your spot with a deposit today
                         </p>
                         <div className="text-3xl font-bold text-white">
-                          $3,525
+                          ${selectedPackageData?.occupancy === 'Double' ? '7,050' : '3,525'}
                         </div>
                         <p className="text-sm text-gray-400 mt-1">
-                          Deposit • Balance due 60 days before travel
+                          {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Deposit • Balance due 60 days before travel
                         </p>
                       </button>
                     </div>
@@ -439,11 +439,11 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         <p className="text-2xl font-bold text-white mt-1">
                           {formData.paymentChoice === 'full' 
                             ? `$${selectedPackageData?.price.toLocaleString()}`
-                            : '$3,525'}
+                            : selectedPackageData?.occupancy === 'Double' ? '$7,050' : '$3,525'}
                         </p>
                         {formData.paymentChoice === 'deposit' && (
                           <p className="text-sm text-gray-400 mt-1">
-                            Balance due 60 days before travel
+                            {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Balance due 60 days before travel
                           </p>
                         )}
                       </div>
