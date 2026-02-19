@@ -240,7 +240,7 @@ export default function Itinerary() {
                     </div>
 
                     {/* Image */}
-                    <div className="relative h-48 lg:h-auto rounded-xl overflow-hidden" style={item.customHeight ? { height: item.customHeight } : {}}>
+                    <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden">
                       <img 
                         src={item.image}
                         alt={item.title}
