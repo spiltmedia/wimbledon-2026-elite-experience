@@ -108,7 +108,6 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
 
   const canProceedStep1 = formData.selectedPackage !== '';
   const canProceedStep2 = formData.paymentChoice !== '';
-  const canProceedStep3 = formData.name && formData.email && formData.phone && formData.travelDates;
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
