@@ -328,28 +328,18 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                   </Button>
                 )}
                 
-                {currentStep < 4 ? (
-                  <Button
-                    onClick={handleNext}
-                    disabled={
-                      currentStep === 1 ? !canProceedStep1 
-                      : currentStep === 2 ? !canProceedStep2 
-                      : !canProceedStep3
-                    }
-                    className="flex-1 bg-[#dc2626] hover:bg-[#b91c1c]"
-                  >
-                    Continue
-                    <ChevronRight className="w-4 h-4 ml-2" />
-                  </Button>
-                ) : (
-                  <Button
-                    onClick={handleSubmit}
-                    disabled={isSubmitting}
-                    className="flex-1 bg-[#dc2626] hover:bg-[#b91c1c]"
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Submit Booking Request'}
-                  </Button>
-                )}
+                <Button
+                  onClick={handleNext}
+                  disabled={
+                    currentStep === 1 ? !canProceedStep1 
+                    : currentStep === 2 ? !canProceedStep2 || isSubmitting
+                    : false
+                  }
+                  className="flex-1 bg-[#dc2626] hover:bg-[#b91c1c]"
+                >
+                  {currentStep === 2 ? (isSubmitting ? 'Processing...' : 'Proceed to Payment') : 'Continue'}
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             </>
           )}
