@@ -10,7 +10,7 @@ const packages = [
     location: 'Russell Square',
     rating: '4-Star',
     singlePrice: 6799,
-    doublePrice: 5554,
+    doublePrice: 5555,
     features: [
       '150m from Russell Square Tube',
       'Walking distance to British Museum',
