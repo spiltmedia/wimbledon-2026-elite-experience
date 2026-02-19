@@ -15,28 +15,44 @@ const packages = [
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Single',
     price: 6799,
-    available: 8
+    available: 8,
+    paymentLinks: {
+      deposit: 'https://app.mlv.com/payment-link/69974d7188a3f0221282df1f',
+      full: 'https://app.mlv.com/payment-link/69974d9049e76fe27fa823c3'
+    }
   },
   {
     id: 'holiday-inn-double',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
     price: 5555,
-    available: 12
+    available: 12,
+    paymentLinks: {
+      deposit: 'https://app.mlv.com/payment-link/69974d14d6779c1cbc98bbfb',
+      full: 'https://app.mlv.com/payment-link/69974d5344f21f9fe6d832be'
+    }
   },
   {
     id: 'welbeck-single',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Single',
     price: 7009,
-    available: 5
+    available: 5,
+    paymentLinks: {
+      deposit: 'https://app.mlv.com/payment-link/69974cd749e76f7fe2a8233b',
+      full: 'https://app.mlv.com/payment-link/69974cf61a8400c7530258c2'
+    }
   },
   {
     id: 'welbeck-double',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
     price: 5658,
-    available: 10
+    available: 10,
+    paymentLinks: {
+      deposit: 'https://app.mlv.com/payment-link/69974ca044f21f1036d8325f',
+      full: 'https://app.mlv.com/payment-link/69974cbe0d246019b2b2bc0f'
+    }
   }
 ];
 
