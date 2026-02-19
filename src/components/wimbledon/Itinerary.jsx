@@ -245,7 +245,7 @@ export default function Itinerary() {
                         src={item.image}
                         alt={item.title}
                         className="w-full h-full object-cover"
-                        style={index === 0 ? { objectPosition: 'center 20%' } : {}}
+                        style={index === 0 ? { objectPosition: 'center 20%' } : index === 4 ? { objectPosition: 'center 30%' } : {}}
                       />
                       {item.highlight && (
                         <div className="absolute top-4 right-4 bg-yellow-500 text-slate-900 px-4 py-2 rounded-full font-bold text-sm">
