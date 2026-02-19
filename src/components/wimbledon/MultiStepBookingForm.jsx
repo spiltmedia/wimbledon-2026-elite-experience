@@ -101,13 +101,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
     setIsSuccess(false);
     setFormData({
       selectedPackage: preSelectedPackage || '',
-      paymentChoice: 'full',
-      name: '',
-      email: '',
-      phone: '',
-      travelDates: '',
-      numberOfTravelers: '1',
-      specialRequests: ''
+      paymentChoice: 'full'
     });
     onClose();
   };
