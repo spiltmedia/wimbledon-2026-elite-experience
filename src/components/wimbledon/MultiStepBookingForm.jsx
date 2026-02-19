@@ -74,7 +74,9 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
   const selectedPackageData = packages.find(pkg => pkg.id === formData.selectedPackage);
 
   const handleNext = () => {
-    if (currentStep < 4) {
+    if (currentStep === 2) {
+      handleSubmit();
+    } else if (currentStep < 2) {
       setCurrentStep(currentStep + 1);
     }
   };
