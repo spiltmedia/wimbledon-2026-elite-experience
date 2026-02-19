@@ -12,8 +12,8 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1920&q=80"
-          alt="Wimbledon Centre Court"
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/060d5b9a6_2AE918C9-AFC6-4E03-8557-9F59A916490E.png"
+          alt="Wimbledon Tennis"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a8a]/80 via-[#1e3a8a]/70 to-[#0f172a]"></div>
@@ -88,7 +88,7 @@ export default function Hero() {
               className="mt-12"
             >
               <p className="text-gray-300 text-lg">
-                Packages from <span className="text-3xl font-bold text-white">$5,554</span> per person
+                Packages from <span className="text-3xl font-bold text-white">$5,555</span> per person
               </p>
             </motion.div>
           </motion.div>

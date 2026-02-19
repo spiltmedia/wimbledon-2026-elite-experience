@@ -11,7 +11,7 @@ const highlights = [
   },
   {
     icon: Hotel,
-    title: '5-Star Accommodations',
+    title: '4-Star Accommodations',
     description: 'Choice of Holiday Inn Bloomsbury or The Welbeck Hotel in prime London locations',
     color: 'green'
   },
