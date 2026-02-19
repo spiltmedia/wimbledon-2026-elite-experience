@@ -85,7 +85,7 @@ const itinerary = [
     title: 'Wimbledon Championships',
     icon: Trophy,
     description: 'The highlight of your journey! Full day at The All England Club featuring Centre Court Debenture tickets, VIP lounge access, and Men\'s & Ladies\' Singles - 1st Round.',
-    image: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&q=80',
+    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/af9aabd15_677A62AD-3C2E-45DD-8ADC-B4E4BC364BCB.png',
     highlight: true,
     location: [51.4344, -0.2141],
     travelTime: '45-50 minutes via District Line to Southfields station',
