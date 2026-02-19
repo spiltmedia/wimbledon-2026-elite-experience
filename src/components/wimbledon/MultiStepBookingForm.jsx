@@ -102,19 +102,24 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
         email: formData.email,
         phone: formData.phone,
         package_interest: selectedPackageData ? 
-          `${selectedPackageData.hotel} - ${selectedPackageData.occupancy} Occupancy - $${selectedPackageData.price}` : 
+          `${selectedPackageData.hotel} - ${selectedPackageData.occupancy} Occupancy - $${selectedPackageData.price} - ${formData.paymentChoice === 'full' ? 'Full Payment' : 'Deposit'}` : 
           'Package inquiry',
         message: `Travel Dates: ${formData.travelDates}\nNumber of Travelers: ${formData.numberOfTravelers}\nSpecial Requests: ${formData.specialRequests || 'None'}`,
         status: 'new'
       });
       
-      setIsSuccess(true);
-      setTimeout(() => {
-        handleClose();
-      }, 3000);
+      // Redirect to payment link
+      const paymentLink = selectedPackageData?.paymentLinks[formData.paymentChoice];
+      if (paymentLink) {
+        window.location.href = paymentLink;
+      } else {
+        setIsSuccess(true);
+        setTimeout(() => {
+          handleClose();
+        }, 3000);
+      }
     } catch (error) {
       console.error('Error submitting booking:', error);
-    } finally {
       setIsSubmitting(false);
     }
   };
