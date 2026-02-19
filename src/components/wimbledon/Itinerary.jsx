@@ -21,7 +21,7 @@ const itinerary = [
     title: 'Arrival in London',
     icon: Plane,
     description: 'Arrive in London and enjoy private airport transfers to your centrally located hotel. Settle in and explore your neighborhood or relax with an evening out.',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80',
+    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/6dae9f6c4_205CE030-1169-4A60-918F-98298F0AF61D.png',
     location: [51.5219, -0.1230],
     travelTime: '45-60 minutes from Heathrow to hotel',
     attire: 'Casual travel attire',
