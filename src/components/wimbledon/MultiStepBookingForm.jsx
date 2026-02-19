@@ -74,9 +74,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
 
   const steps = [
     { number: 1, title: 'Select Package', icon: Hotel },
-    { number: 2, title: 'Payment Choice', icon: CheckCircle },
-    { number: 3, title: 'Your Details', icon: User },
-    { number: 4, title: 'Confirmation', icon: CheckCircle }
+    { number: 2, title: 'Payment Choice', icon: CheckCircle }
   ];
 
   const selectedPackageData = packages.find(pkg => pkg.id === formData.selectedPackage);
