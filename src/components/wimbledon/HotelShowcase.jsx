@@ -178,21 +178,6 @@ export default function HotelShowcase() {
                   />
                 </div>
               </div>
-
-              {/* Room Preview */}
-              <div className="relative h-48 border-t border-slate-700">
-                <img 
-                  src={hotel.heroImage}
-                  alt={`${hotel.name} rooms`}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-transparent flex items-center">
-                  <div className="px-8">
-                    <p className="text-white font-semibold text-lg">Comfortable Modern Rooms</p>
-                    <p className="text-gray-300 text-sm">Designed for your London experience</p>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           ))}
         </div>
