@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../components/wimbledon/Hero';
+import ExitIntentPopup from '../components/wimbledon/ExitIntentPopup';
 import PackageHighlights from '../components/wimbledon/PackageHighlights';
 import HotelShowcase from '../components/wimbledon/HotelShowcase';
 import Itinerary from '../components/wimbledon/Itinerary';
