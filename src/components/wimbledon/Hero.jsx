@@ -113,14 +113,26 @@ export default function Hero() {
               </Button>
             </div>
 
-            {/* Pricing Teaser */}
+            {/* Countdown Timer */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-12"
+              className="mt-10"
             >
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-300 text-sm uppercase tracking-widest font-semibold mb-4">
+                ⏳ Tournament begins in
+              </p>
+              <div className="flex justify-center items-center gap-3 md:gap-4">
+                <CountdownUnit value={countdown.days} label="Days" />
+                <span className="text-white/50 text-3xl font-light mb-4">:</span>
+                <CountdownUnit value={countdown.hours} label="Hours" />
+                <span className="text-white/50 text-3xl font-light mb-4">:</span>
+                <CountdownUnit value={countdown.minutes} label="Minutes" />
+                <span className="text-white/50 text-3xl font-light mb-4">:</span>
+                <CountdownUnit value={countdown.seconds} label="Seconds" />
+              </div>
+              <p className="text-gray-300 text-lg mt-6">
                 Packages from <span className="text-3xl font-bold text-white">$5,555</span> per person
               </p>
             </motion.div>
