@@ -17,6 +17,7 @@ export default function Home() {
       <HotelShowcase />
       <Itinerary />
       <PricingSection />
+      <FAQSection />
       <CTASection />
       <Footer />
       <ExitIntentPopup />
