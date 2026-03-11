@@ -38,6 +38,7 @@ function CountdownUnit({ value, label }) {
 
 export default function Hero() {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const countdown = useCountdown('2026-06-26T09:00:00');
 
   return (
     <div className="relative h-[85vh] overflow-hidden">
