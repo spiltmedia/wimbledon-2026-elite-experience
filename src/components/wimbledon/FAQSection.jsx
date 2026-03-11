@@ -14,7 +14,7 @@ const faqs = [
     questions: [
       {
         q: 'What are Debenture tickets and how are they different from regular tickets?',
-        a: 'Debenture tickets are privately owned, premium seats for Centre Court at Wimbledon. Unlike ballot tickets, Debentures guarantee the same seat for every session across the entire Championships. They also come with exclusive access to the Debenture Holders' Lounge, private restaurants, bars, and a members-only terrace — a level of access simply not available with standard tickets.'
+        a: "Debenture tickets are privately owned, premium seats for Centre Court at Wimbledon. Unlike ballot tickets, Debentures guarantee the same seat for every session across the entire Championships. They also come with exclusive access to the Debenture Holders' Lounge, private restaurants, bars, and a members-only terrace — a level of access simply not available with standard tickets."
       },
       {
         q: 'Which day of play is included in the package?',
