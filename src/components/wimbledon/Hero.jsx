@@ -1,8 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Trophy } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import MultiStepBookingForm from './MultiStepBookingForm';
+
+function useCountdown(targetDate) {
+  const calculate = () => {
+    const diff = new Date(targetDate) - new Date();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((diff / (1000 * 60)) % 60),
+      seconds: Math.floor((diff / 1000) % 60),
+    };
+  };
+  const [time, setTime] = useState(calculate);
+  useEffect(() => {
+    const id = setInterval(() => setTime(calculate()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
+function CountdownUnit({ value, label }) {
+  return (
+    <div className="flex flex-col items-center">
+      <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl w-16 md:w-20 h-16 md:h-20 flex items-center justify-center shadow-lg">
+        <span className="text-2xl md:text-4xl font-bold text-white tabular-nums leading-none">
+          {String(value).padStart(2, '0')}
+        </span>
+      </div>
+      <span className="mt-2 text-[10px] md:text-xs uppercase tracking-widest text-gray-300 font-semibold">{label}</span>
+    </div>
+  );
+}
 
 export default function Hero() {
   const [isFormOpen, setIsFormOpen] = useState(false);
