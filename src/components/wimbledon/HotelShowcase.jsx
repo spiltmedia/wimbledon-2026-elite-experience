@@ -35,8 +35,8 @@ const hotels = [
     location: 'Marylebone, West End',
     rating: 8.6,
     stars: 4,
-    image: 'https://thewelbeckhotel.com/wp-content/uploads/2024/09/10e26babc2154ce6e14e07076212c675.jpeg',
-    heroImage: 'https://thewelbeckhotel.com/wp-content/uploads/2024/11/IHG_Deluxe-Room-4-1800x1027.jpg',
+    image: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/1a85d31d5_WelbeckPicture.jpg',
+    heroImage: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/698df621cc553bf3c1408272/1a85d31d5_WelbeckPicture.jpg',
     description: 'A sophisticated 4-star boutique hotel in London\'s prestigious Marylebone district, offering 164 modern rooms with wellness-focused amenities and prime West End access.',
     highlights: [
       'Prime West End location near Oxford Circus',
