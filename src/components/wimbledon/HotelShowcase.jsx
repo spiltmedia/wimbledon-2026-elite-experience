@@ -67,7 +67,7 @@ export default function HotelShowcase() {
   });
 
   return (
-    <section className="py-12 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,10 +76,10 @@ export default function HotelShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Your London Accommodations
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-500 max-w-3xl mx-auto">
             Choose from two exceptional 4-star hotels in prime Central London locations
           </p>
         </motion.div>
@@ -92,10 +92,10 @@ export default function HotelShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative overflow-hidden rounded-3xl ${
+              className={`relative overflow-hidden rounded-3xl shadow-lg ${
                 hotel.premium 
-                  ? 'bg-gradient-to-br from-[#1e3a8a]/40 to-slate-800 border-2 border-[#dc2626]/30' 
-                  : 'bg-slate-800 border border-slate-700'
+                  ? 'bg-white border-2 border-[#dc2626]/30' 
+                  : 'bg-white border border-slate-200'
               }`}
             >
               {hotel.premium && (
@@ -134,14 +134,14 @@ export default function HotelShowcase() {
                         <Star key={i} className="w-4 h-4 text-yellow-500" fill="currentColor" />
                       ))}
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-2">{hotel.name}</h3>
-                    <div className="flex items-center gap-2 text-gray-400">
+                    <h3 className="text-3xl font-bold text-slate-900 mb-2">{hotel.name}</h3>
+                    <div className="flex items-center gap-2 text-slate-500">
                       <MapPin className="w-4 h-4" />
                       <span>{hotel.location}</span>
                     </div>
                   </div>
 
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <p className="text-slate-600 leading-relaxed mb-6">
                     {hotel.description}
                   </p>
 
@@ -150,7 +150,7 @@ export default function HotelShowcase() {
                     {hotel.highlights.map((highlight, i) => (
                       <div key={i} className="flex items-start gap-2">
                         <div className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-300 text-sm">{highlight}</span>
+                        <span className="text-slate-600 text-sm">{highlight}</span>
                       </div>
                     ))}
                   </div>
@@ -164,7 +164,7 @@ export default function HotelShowcase() {
                           <div className="w-8 h-8 rounded-lg bg-[#1e3a8a]/20 flex items-center justify-center">
                             <Icon className="w-4 h-4 text-[#1e3a8a]" />
                           </div>
-                          <span className="text-gray-300 text-sm">{amenity.label}</span>
+                          <span className="text-slate-600 text-sm">{amenity.label}</span>
                         </div>
                       );
                     })}
@@ -190,7 +190,7 @@ export default function HotelShowcase() {
           transition={{ duration: 0.6 }}
           className="mt-8 text-center"
         >
-          <p className="text-gray-400 text-lg">
+          <p className="text-slate-500 text-lg">
             Both hotels offer exceptional Central London locations, making it easy to experience 
             <br className="hidden md:block" />
             everything from world-class museums to West End shows, all while staying minutes from Wimbledon.
