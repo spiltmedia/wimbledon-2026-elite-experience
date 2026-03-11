@@ -8,14 +8,14 @@ export default function CTASection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
-    <section className="py-12 bg-gradient-to-b from-slate-800 to-slate-900">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-purple-900 to-green-900 rounded-3xl p-12 text-center"
+          className="bg-gradient-to-br from-[#1e3a8a] to-[#0f172a] rounded-3xl p-12 text-center shadow-2xl"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Ready for Wimbledon 2026?

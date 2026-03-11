@@ -43,7 +43,7 @@ const highlights = [
 
 export default function PackageHighlights() {
   return (
-    <section className="py-12 bg-slate-900">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,20 +52,22 @@ export default function PackageHighlights() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <span className="inline-block bg-[#dc2626]/10 text-[#dc2626] font-semibold text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Everything Included</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Your Championship Experience
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-500 max-w-3xl mx-auto">
             Everything you need for an unforgettable Wimbledon journey
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {highlights.map((item, index) => {
             const Icon = item.icon;
             const colorClasses = item.color === 'purple' 
-              ? 'from-[#1e3a8a] to-[#1e40af] shadow-blue-500/20' 
-              : 'from-[#dc2626] to-[#b91c1c] shadow-red-500/20';
+              ? 'from-[#1e3a8a] to-[#1e40af]' 
+              : 'from-[#dc2626] to-[#b91c1c]';
+            const bgTint = item.color === 'purple' ? 'bg-blue-50 border-blue-100' : 'bg-red-50 border-red-100';
             
             return (
               <motion.div
@@ -74,13 +76,13 @@ export default function PackageHighlights() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-slate-800 border border-slate-700 rounded-2xl p-8 hover:border-[#dc2626]/50 transition-all duration-300"
+                className={`${bgTint} border rounded-2xl p-8 hover:shadow-lg transition-all duration-300`}
               >
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${colorClasses} flex items-center justify-center mb-6 shadow-lg`}>
-                  <Icon className="w-8 h-8 text-white" />
+                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${colorClasses} flex items-center justify-center mb-5 shadow-md`}>
+                  <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.description}</p>
               </motion.div>
             );
           })}

@@ -16,7 +16,7 @@ export default function Hero() {
           alt="Wimbledon Tennis"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1e3a8a]/80 via-[#1e3a8a]/70 to-[#0f172a]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/60 via-[#1e3a8a]/40 to-[#0f172a]/80"></div>
       </div>
 
       {/* Content */}
