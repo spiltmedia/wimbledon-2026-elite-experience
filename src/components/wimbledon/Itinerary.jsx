@@ -134,6 +134,10 @@ export default function Itinerary() {
             From London's iconic landmarks to Centre Court's championship action
           </p>
           
+          <div className="flex justify-center mb-4">
+            <DownloadItineraryButton />
+          </div>
+
           {/* View Toggle */}
           <div className="flex justify-center gap-2">
             <Button
