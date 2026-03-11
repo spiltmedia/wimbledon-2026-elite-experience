@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Button } from '@/components/ui/button';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import DownloadItineraryButton from './DownloadItineraryButton';
 
 // Fix for default marker icons in React Leaflet
 delete L.Icon.Default.prototype._getIconUrl;
