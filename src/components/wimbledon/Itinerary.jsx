@@ -118,7 +118,7 @@ export default function Itinerary() {
   const [viewMode, setViewMode] = useState('list');
 
   return (
-    <section className="py-12 bg-gradient-to-b from-slate-900 to-slate-800">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,10 +127,10 @@ export default function Itinerary() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
             Your 6-Day Journey
           </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-slate-500 max-w-3xl mx-auto mb-6">
             From London's iconic landmarks to Centre Court's championship action
           </p>
           
@@ -170,10 +170,10 @@ export default function Itinerary() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative overflow-hidden rounded-2xl ${
+                  className={`relative overflow-hidden rounded-2xl shadow-sm ${
                     item.highlight 
-                      ? 'bg-gradient-to-r from-[#1e3a8a]/50 to-[#dc2626]/30 border-2 border-[#dc2626]/50' 
-                      : 'bg-slate-800 border border-slate-700'
+                      ? 'bg-gradient-to-r from-[#1e3a8a] to-[#1e3a8a]/90 border-2 border-[#dc2626]/60' 
+                      : 'bg-white border border-slate-200'
                   }`}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6">
@@ -192,16 +192,16 @@ export default function Itinerary() {
                           <div className="text-base font-bold text-white">{item.date}</div>
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-gray-300 leading-relaxed text-sm mb-4">{item.description}</p>
+                      <h3 className={`text-xl font-bold mb-2 ${item.highlight ? 'text-white' : 'text-slate-900'}`}>{item.title}</h3>
+                      <p className={`leading-relaxed text-sm mb-4 ${item.highlight ? 'text-blue-100' : 'text-slate-600'}`}>{item.description}</p>
                       
                       {/* Practical Details */}
                       <div className="space-y-2 mb-4">
-                        <div className="flex items-start gap-2 text-xs text-gray-400">
+                        <div className={`flex items-start gap-2 text-xs ${item.highlight ? 'text-blue-200' : 'text-slate-500'}`}>
                           <Clock className="w-4 h-4 mt-0.5 flex-shrink-0 text-blue-400" />
                           <span>{item.travelTime}</span>
                         </div>
-                        <div className="flex items-start gap-2 text-xs text-gray-400">
+                        <div className={`flex items-start gap-2 text-xs ${item.highlight ? 'text-blue-200' : 'text-slate-500'}`}>
                           <Shirt className="w-4 h-4 mt-0.5 flex-shrink-0 text-purple-400" />
                           <span>{item.attire}</span>
                         </div>
