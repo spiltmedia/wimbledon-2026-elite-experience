@@ -6,6 +6,7 @@ import HotelShowcase from '../components/wimbledon/HotelShowcase';
 import Itinerary from '../components/wimbledon/Itinerary';
 import PricingSection from '../components/wimbledon/PricingSection';
 import CTASection from '../components/wimbledon/CTASection';
+import FAQSection from '../components/wimbledon/FAQSection';
 import Footer from '../components/wimbledon/Footer';
 
 export default function Home() {
