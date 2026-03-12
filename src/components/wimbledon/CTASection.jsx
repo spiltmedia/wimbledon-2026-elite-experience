@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Calendar } from 'lucide-react';
+import { Mail, Phone, Calendar, Send, CheckCircle, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import MultiStepBookingForm from './MultiStepBookingForm';
+import { base44 } from '@/api/base44Client';
 
 export default function CTASection() {
   const [isFormOpen, setIsFormOpen] = useState(false);
