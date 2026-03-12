@@ -67,6 +67,23 @@ const faqs = [
 ];
 
 export default function FAQSection() {
+  const [query, setQuery] = useState('');
+
+  const filteredFaqs = useMemo(() => {
+    if (!query.trim()) return faqs;
+    const q = query.toLowerCase();
+    return faqs
+      .map(group => ({
+        ...group,
+        questions: group.questions.filter(
+          item => item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q)
+        ),
+      }))
+      .filter(group => group.questions.length > 0);
+  }, [query]);
+
+  const totalResults = filteredFaqs.reduce((acc, g) => acc + g.questions.length, 0);
+
   return (
     <section className="py-16 bg-slate-50">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
@@ -75,7 +92,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <span className="inline-flex items-center gap-2 bg-[#1e3a8a]/10 text-[#1e3a8a] font-semibold text-sm uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             <HelpCircle className="w-4 h-4" />
@@ -89,37 +106,87 @@ export default function FAQSection() {
           </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {faqs.map((group, gi) => (
-            <motion.div
-              key={gi}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: gi * 0.1 }}
+        {/* Search Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="relative mb-10"
+        >
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+          <input
+            type="text"
+            placeholder="Search questions — e.g. "visa", "deposit", "tickets"..."
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+            className="w-full pl-12 pr-12 py-4 rounded-2xl border border-slate-200 bg-white shadow-sm text-slate-800 placeholder-slate-400 text-base focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/30 focus:border-[#1e3a8a]/50 transition-all"
+          />
+          {query && (
+            <button
+              onClick={() => setQuery('')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
             >
-              <h3 className="text-xs font-bold uppercase tracking-widest text-[#dc2626] mb-3 pl-1">
-                {group.category}
-              </h3>
-              <Accordion type="single" collapsible className="space-y-2">
-                {group.questions.map((item, qi) => (
-                  <AccordionItem
-                    key={qi}
-                    value={`${gi}-${qi}`}
-                    className="bg-white border border-slate-200 rounded-xl px-6 shadow-sm data-[state=open]:border-[#1e3a8a]/30 data-[state=open]:shadow-md transition-all"
-                  >
-                    <AccordionTrigger className="text-left text-slate-900 font-semibold text-base hover:no-underline py-5">
-                      {item.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-slate-600 leading-relaxed pb-5 text-base">
-                      {item.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+              <X className="w-5 h-5" />
+            </button>
+          )}
+          {query && (
+            <p className="text-sm text-slate-400 mt-2 pl-1">
+              {totalResults > 0
+                ? `${totalResults} result${totalResults !== 1 ? 's' : ''} found`
+                : 'No results found — try a different keyword'}
+            </p>
+          )}
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {filteredFaqs.length > 0 ? (
+            <motion.div
+              key={query}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-8"
+            >
+              {filteredFaqs.map((group, gi) => (
+                <div key={gi}>
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#dc2626] mb-3 pl-1">
+                    {group.category}
+                  </h3>
+                  <Accordion type="single" collapsible className="space-y-2">
+                    {group.questions.map((item, qi) => (
+                      <AccordionItem
+                        key={qi}
+                        value={`${gi}-${qi}`}
+                        className="bg-white border border-slate-200 rounded-xl px-6 shadow-sm data-[state=open]:border-[#1e3a8a]/30 data-[state=open]:shadow-md transition-all"
+                      >
+                        <AccordionTrigger className="text-left text-slate-900 font-semibold text-base hover:no-underline py-5">
+                          {item.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-slate-600 leading-relaxed pb-5 text-base">
+                          {item.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              ))}
             </motion.div>
-          ))}
-        </div>
+          ) : (
+            <motion.div
+              key="empty"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="text-center py-16 text-slate-400"
+            >
+              <Search className="w-12 h-12 mx-auto mb-4 opacity-30" />
+              <p className="text-lg font-medium">No matching questions found.</p>
+              <p className="text-sm mt-1">Try searching with different keywords or browse all questions by clearing the search.</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.p
           initial={{ opacity: 0 }}
