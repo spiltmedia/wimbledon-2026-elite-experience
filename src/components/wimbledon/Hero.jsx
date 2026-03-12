@@ -53,7 +53,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative h-[85vh] overflow-hidden">
+    <div className="relative min-h-[85vh] overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
