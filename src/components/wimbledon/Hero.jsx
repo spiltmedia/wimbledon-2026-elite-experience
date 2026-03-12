@@ -144,7 +144,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
+              <div className="bg-[#0f172a]/90 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
                 {!isSuccess ? (
                   <>
                     <h3 className="text-xl font-bold text-white mb-1">Reserve Your Spot</h3>
