@@ -1,12 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { HelpCircle } from 'lucide-react';
+import { HelpCircle, Search, X } from 'lucide-react';
 
 const faqs = [
   {
