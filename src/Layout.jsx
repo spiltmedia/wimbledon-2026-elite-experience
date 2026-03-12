@@ -41,7 +41,7 @@ export default function Layout({ children, currentPageName }) {
       <div className="bg-[#0f172a] text-gray-300 text-xs py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4">
           <span>📍 2805 South Front Street, Suite 200, Philadelphia PA. 19148</span>
-          <a href="tel:+18002226256" className="text-white font-semibold hover:text-[#dc2626] transition-colors">
+          <a href="tel:+18002226256" className="text-white text-base md:text-lg font-bold hover:text-[#dc2626] transition-colors tracking-wide">
             📞 1-800-222-6256
           </a>
         </div>
