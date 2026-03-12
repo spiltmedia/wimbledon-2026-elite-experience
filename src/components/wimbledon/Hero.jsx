@@ -40,6 +40,17 @@ function CountdownUnit({ value, label }) {
 export default function Hero() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const countdown = useCountdown('2026-06-26T09:00:00');
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleQuickInquiry = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    await base44.entities.Inquiry.create({ ...formData, message: 'Quick inquiry from hero banner', package_interest: 'General Inquiry' });
+    setIsSubmitting(false);
+    setIsSuccess(true);
+  };
 
   return (
     <div className="relative h-[85vh] overflow-hidden">
