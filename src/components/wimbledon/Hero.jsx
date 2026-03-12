@@ -67,88 +67,152 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            {/* Logo */}
-            <div className="mb-8">
-              <img 
-                src="https://mlv.com/wp-content/uploads/2021/10/MLV_Logo.png.webp"
-                alt="Major League Vacations"
-                className="h-24 mx-auto"
-              />
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
-              Wimbledon 2026
-              <span className="block text-[#dc2626]">
-                Centre Court Experience
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              5 Nights in London | Exclusive Debenture Tickets | VIP Access
-            </p>
-
-            {/* Quick Info */}
-            <div className="flex flex-wrap justify-center gap-6 mb-12">
-              <div className="flex items-center gap-2 text-gray-200">
-                <Calendar className="w-5 h-5 text-[#dc2626]" />
-                <span className="font-medium">June 26 - July 1, 2026</span>
-              </div>
-              <div className="flex items-center gap-2 text-gray-200">
-                <MapPin className="w-5 h-5 text-[#dc2626]" />
-                <span className="font-medium">London, England</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-lg px-8 py-6 h-auto shadow-xl"
-                onClick={() => setIsFormOpen(true)}
-              >
-                Book Your Package
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm text-lg px-8 py-6 h-auto transition-all"
-                onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
-              >
-                View Packages
-              </Button>
-            </div>
-
-            {/* Countdown Timer */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Headline */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="mt-10"
+              transition={{ duration: 0.8 }}
             >
-              <p className="text-gray-300 text-sm uppercase tracking-widest font-semibold mb-4">
-                ⏳ Tournament begins in
-              </p>
-              <div className="flex justify-center items-center gap-3 md:gap-4">
-                <CountdownUnit value={countdown.days} label="Days" />
-                <span className="text-white/50 text-3xl font-light mb-4">:</span>
-                <CountdownUnit value={countdown.hours} label="Hours" />
-                <span className="text-white/50 text-3xl font-light mb-4">:</span>
-                <CountdownUnit value={countdown.minutes} label="Minutes" />
-                <span className="text-white/50 text-3xl font-light mb-4">:</span>
-                <CountdownUnit value={countdown.seconds} label="Seconds" />
+              <div className="mb-6">
+                <img
+                  src="https://mlv.com/wp-content/uploads/2021/10/MLV_Logo.png.webp"
+                  alt="Major League Vacations"
+                  className="h-20"
+                />
               </div>
-              <p className="text-gray-300 text-lg mt-6">
-                Packages from <span className="text-3xl font-bold text-white">$5,555</span> per person
+
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+                Wimbledon 2026
+                <span className="block text-[#dc2626]">Centre Court</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-gray-200 mb-6">
+                5 Nights in London | Exclusive Debenture Tickets | VIP Access
               </p>
+
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 text-gray-200">
+                  <Calendar className="w-4 h-4 text-[#dc2626]" />
+                  <span className="text-sm font-medium">June 26 – July 1, 2026</span>
+                </div>
+                <div className="flex items-center gap-2 text-gray-200">
+                  <MapPin className="w-4 h-4 text-[#dc2626]" />
+                  <span className="text-sm font-medium">London, England</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-8">
+                <Button
+                  size="lg"
+                  className="bg-[#dc2626] hover:bg-[#b91c1c] text-white text-base px-6 py-5 h-auto shadow-xl"
+                  onClick={() => setIsFormOpen(true)}
+                >
+                  Book Your Package
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm text-base px-6 py-5 h-auto"
+                  onClick={() => window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' })}
+                >
+                  View Packages
+                </Button>
+              </div>
+
+              {/* Countdown */}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
+                <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-3">⏳ Tournament begins in</p>
+                <div className="flex items-center gap-2 md:gap-3">
+                  <CountdownUnit value={countdown.days} label="Days" />
+                  <span className="text-white/40 text-2xl font-light mb-4">:</span>
+                  <CountdownUnit value={countdown.hours} label="Hours" />
+                  <span className="text-white/40 text-2xl font-light mb-4">:</span>
+                  <CountdownUnit value={countdown.minutes} label="Min" />
+                  <span className="text-white/40 text-2xl font-light mb-4">:</span>
+                  <CountdownUnit value={countdown.seconds} label="Sec" />
+                </div>
+                <p className="text-gray-300 mt-4 text-base">
+                  Packages from <span className="text-2xl font-bold text-white">$5,555</span> per person
+                </p>
+              </motion.div>
             </motion.div>
-          </motion.div>
+
+            {/* Right: Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-2xl">
+                {!isSuccess ? (
+                  <>
+                    <h3 className="text-xl font-bold text-white mb-1">Reserve Your Spot</h3>
+                    <p className="text-gray-300 text-sm mb-5">Leave your details and we'll reach out within 24 hours.</p>
+                    <form onSubmit={handleQuickInquiry} className="space-y-3">
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                        <input
+                          required
+                          placeholder="Your full name"
+                          value={formData.name}
+                          onChange={e => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-white/30"
+                        />
+                      </div>
+                      <div className="relative">
+                        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                        <input
+                          type="email"
+                          required
+                          placeholder="Email address"
+                          value={formData.email}
+                          onChange={e => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-white/30"
+                        />
+                      </div>
+                      <div className="relative">
+                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                        <input
+                          type="tel"
+                          placeholder="Phone number (optional)"
+                          value={formData.phone}
+                          onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-white/30"
+                        />
+                      </div>
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full bg-[#dc2626] hover:bg-[#b91c1c] text-white py-5 h-auto text-base font-bold shadow-lg mt-1"
+                      >
+                        {isSubmitting ? 'Sending...' : <><Send className="w-4 h-4 mr-2" /> Get More Information</>}
+                      </Button>
+                    </form>
+                    <div className="mt-5 pt-5 border-t border-white/10 flex flex-col sm:flex-row gap-3 text-xs text-gray-400 justify-center">
+                      <a href="tel:+18002226256" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                        <Phone className="w-3 h-3" /> 800-222-6256
+                      </a>
+                      <a href="mailto:shantall@mlv.com" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                        <Mail className="w-3 h-3" /> shantall@mlv.com
+                      </a>
+                    </div>
+                  </>
+                ) : (
+                  <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="w-8 h-8 text-green-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2">You're on the list!</h3>
+                    <p className="text-gray-300 text-sm mb-5">Our team will reach out within 24 hours.</p>
+                    <Button className="bg-white text-[#1e3a8a] hover:bg-gray-100 font-bold" onClick={() => setIsFormOpen(true)}>
+                      <Calendar className="w-4 h-4 mr-2" /> Book Now
+                    </Button>
+                  </motion.div>
+                )}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
 
