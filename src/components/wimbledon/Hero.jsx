@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, Send, CheckCircle, User, Mail, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import MultiStepBookingForm from './MultiStepBookingForm';
+import { base44 } from '@/api/base44Client';
 
 function useCountdown(targetDate) {
   const calculate = () => {
