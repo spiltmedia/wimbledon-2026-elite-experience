@@ -129,10 +129,18 @@ export default function PricingSection() {
                 </div>
 
                 <div className="mb-6">
-                  <div className="text-5xl font-bold text-white mb-2">
+                  <div className="text-5xl font-bold text-white mb-1">
                     ${occupancy === 'single' ? pkg.singlePrice.toLocaleString() : pkg.doublePrice.toLocaleString()}
                   </div>
-                  <div className="text-gray-400">per person</div>
+                  <div className="text-gray-400 text-sm mb-1">per person</div>
+                  <div className="text-gray-500 text-sm">
+                    ${occupancy === 'single' ? pkg.singlePriceCC.toLocaleString() : pkg.doublePriceCC.toLocaleString()} with CC surcharge
+                    {occupancy === 'double' && (
+                      <span className="ml-1 text-gray-600">
+                        (Total: ${(occupancy === 'single' ? pkg.singlePriceCC : pkg.doublePriceCC * 2).toLocaleString()})
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <div className="space-y-3 mb-8">
