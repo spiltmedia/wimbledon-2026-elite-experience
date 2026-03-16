@@ -222,10 +222,10 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                           </div>
                           
                           <div className="text-2xl font-bold text-white mb-1">
-                            ${pkg.price.toLocaleString()}
+                            ${pkg.priceCC.toLocaleString()}
                             <span className="text-sm text-gray-400 font-normal"> per person</span>
                           </div>
-                          <div className="text-xs text-gray-500 mb-2">${pkg.priceCC.toLocaleString()} with CC surcharge</div>
+                          <div className="text-xs text-gray-500 mb-2">${pkg.price.toLocaleString()} without CC surcharge</div>
                           
                           <div className="flex items-center gap-2 text-sm">
                             {pkg.available > 5 ? (
@@ -278,13 +278,13 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         </p>
                         <div className="text-3xl font-bold text-white">
                           ${selectedPackageData?.occupancy === 'Double' 
-                            ? (selectedPackageData.price * 2).toLocaleString()
-                            : selectedPackageData?.price.toLocaleString()}
+                            ? (selectedPackageData.priceCC * 2).toLocaleString()
+                            : selectedPackageData?.priceCC.toLocaleString()}
                         </div>
                         <p className="text-sm text-gray-400 mt-1">
                           {selectedPackageData?.occupancy === 'Double' 
-                            ? `$${selectedPackageData.price.toLocaleString()} per person • ` 
-                            : ''}Total amount
+                            ? `$${selectedPackageData.priceCC.toLocaleString()} per person • ` 
+                            : ''}Total amount (incl. CC surcharge)
                         </p>
                       </button>
 
@@ -304,7 +304,7 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         
                         <h4 className="text-xl font-bold text-white mb-2">Pay Deposit</h4>
                         <p className="text-gray-400 text-sm mb-4">
-                          Reserve your spot — 50% deposit, balance in installments
+                          Reserve your spot — pay in installments over 3 payments
                         </p>
                         <div className="text-3xl font-bold text-white">
                           ${selectedPackageData?.occupancy === 'Double' ? '3,582' : '1,791'}
