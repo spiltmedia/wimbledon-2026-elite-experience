@@ -9,8 +9,8 @@ const packages = [
     hotel: 'Holiday Inn Bloomsbury',
     location: 'Russell Square',
     rating: '4-Star',
-    singlePrice: 6799,
-    doublePrice: 5555,
+    singlePrice: 6605,
+    doublePrice: 5405,
     features: [
       '150m from Russell Square Tube',
       'Walking distance to British Museum',
@@ -23,8 +23,8 @@ const packages = [
     hotel: 'The Welbeck Hotel',
     location: 'Marylebone',
     rating: '4-Star Boutique',
-    singlePrice: 7007,
-    doublePrice: 5658,
+    singlePrice: 6805,
+    doublePrice: 5505,
     features: [
       'Prime West End location',
       'Near Selfridges & Oxford Street',
@@ -165,13 +165,29 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           className="bg-gradient-to-r from-[#1e3a8a]/30 to-[#dc2626]/20 border border-[#dc2626]/30 rounded-2xl p-8 mb-12"
         >
-          <h3 className="text-2xl font-bold text-white mb-4 text-center">Initial Deposit</h3>
-          <div className="text-center mb-4">
-            <div className="text-5xl font-bold text-white mb-2">FROM $3,525</div>
-            <p className="text-gray-300 text-lg">per person</p>
+          <h3 className="text-2xl font-bold text-white mb-6 text-center">Payment Schedule</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div className="bg-slate-800/60 rounded-xl p-5 text-center border border-slate-700">
+              <p className="text-[#dc2626] text-xs font-bold uppercase tracking-widest mb-2">At Booking</p>
+              <div className="text-3xl font-bold text-white mb-1">$1,791</div>
+              <p className="text-gray-400 text-sm">per person</p>
+              <p className="text-gray-500 text-xs mt-2">($3,582 with CC surcharge)</p>
+            </div>
+            <div className="bg-slate-800/60 rounded-xl p-5 text-center border border-slate-700">
+              <p className="text-[#dc2626] text-xs font-bold uppercase tracking-widest mb-2">April 1, 2026</p>
+              <div className="text-3xl font-bold text-white mb-1">$1,791</div>
+              <p className="text-gray-400 text-sm">per person</p>
+              <p className="text-gray-500 text-xs mt-2">Second deposit</p>
+            </div>
+            <div className="bg-slate-800/60 rounded-xl p-5 text-center border border-slate-700">
+              <p className="text-[#dc2626] text-xs font-bold uppercase tracking-widest mb-2">May 1, 2026</p>
+              <div className="text-3xl font-bold text-white mb-1">Balance</div>
+              <p className="text-gray-400 text-sm">remaining amount</p>
+              <p className="text-gray-500 text-xs mt-2">Final payment</p>
+            </div>
           </div>
-          <p className="text-gray-400 text-center max-w-2xl mx-auto">
-            * Initial deposit amount depends on pricing at time of booking. Secure your spot today!
+          <p className="text-gray-400 text-center text-sm max-w-2xl mx-auto">
+            Total deposit: $3,450 per person ($3,582 with CC surcharge) • Split evenly at booking and April 1st
           </p>
         </motion.div>
 
