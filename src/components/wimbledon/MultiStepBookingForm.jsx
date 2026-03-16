@@ -15,6 +15,7 @@ const packages = [
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Single',
     price: 6605,
+    priceCC: 6855,
     available: 8,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974d7188a3f0221282df1f',
@@ -26,6 +27,7 @@ const packages = [
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
     price: 5405,
+    priceCC: 5610,
     available: 12,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974d14d6779c1cbc98bbfb',
@@ -37,6 +39,7 @@ const packages = [
     hotel: 'The Welbeck Hotel',
     occupancy: 'Single',
     price: 6805,
+    priceCC: 7065,
     available: 5,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974cd749e76f7fe2a8233b',
@@ -48,6 +51,7 @@ const packages = [
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
     price: 5505,
+    priceCC: 5715,
     available: 10,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974ca044f21f1036d8325f',
@@ -217,10 +221,11 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                             <p className="text-sm text-gray-400">{pkg.occupancy} Occupancy</p>
                           </div>
                           
-                          <div className="text-2xl font-bold text-white mb-2">
+                          <div className="text-2xl font-bold text-white mb-1">
                             ${pkg.price.toLocaleString()}
                             <span className="text-sm text-gray-400 font-normal"> per person</span>
                           </div>
+                          <div className="text-xs text-gray-500 mb-2">${pkg.priceCC.toLocaleString()} with CC surcharge</div>
                           
                           <div className="flex items-center gap-2 text-sm">
                             {pkg.available > 5 ? (
