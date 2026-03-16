@@ -11,6 +11,8 @@ const packages = [
     rating: '4-Star',
     singlePrice: 6605,
     doublePrice: 5405,
+    singlePriceCC: 6855,
+    doublePriceCC: 5610,
     features: [
       '150m from Russell Square Tube',
       'Walking distance to British Museum',
@@ -25,6 +27,8 @@ const packages = [
     rating: '4-Star Boutique',
     singlePrice: 6805,
     doublePrice: 5505,
+    singlePriceCC: 7065,
+    doublePriceCC: 5715,
     features: [
       'Prime West End location',
       'Near Selfridges & Oxford Street',
