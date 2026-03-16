@@ -14,7 +14,7 @@ const packages = [
     id: 'holiday-inn-single',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Single',
-    price: 6799,
+    price: 6605,
     available: 8,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974d7188a3f0221282df1f',
@@ -25,7 +25,7 @@ const packages = [
     id: 'holiday-inn-double',
     hotel: 'Holiday Inn London - Bloomsbury',
     occupancy: 'Double',
-    price: 5555,
+    price: 5405,
     available: 12,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974d14d6779c1cbc98bbfb',
@@ -36,7 +36,7 @@ const packages = [
     id: 'welbeck-single',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Single',
-    price: 7009,
+    price: 6805,
     available: 5,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974cd749e76f7fe2a8233b',
@@ -47,7 +47,7 @@ const packages = [
     id: 'welbeck-double',
     hotel: 'The Welbeck Hotel',
     occupancy: 'Double',
-    price: 5658,
+    price: 5505,
     available: 10,
     paymentLinks: {
       deposit: 'https://app.mlv.com/payment-link/69974ca044f21f1036d8325f',
@@ -299,14 +299,18 @@ export default function MultiStepBookingForm({ isOpen, onClose, preSelectedPacka
                         
                         <h4 className="text-xl font-bold text-white mb-2">Pay Deposit</h4>
                         <p className="text-gray-400 text-sm mb-4">
-                          Reserve your spot with a deposit today
+                          Reserve your spot — 50% deposit, balance in installments
                         </p>
                         <div className="text-3xl font-bold text-white">
-                          ${selectedPackageData?.occupancy === 'Double' ? '7,049' : '3,525'}
+                          ${selectedPackageData?.occupancy === 'Double' ? '3,582' : '1,791'}
                         </div>
                         <p className="text-sm text-gray-400 mt-1">
-                          {selectedPackageData?.occupancy === 'Double' ? '$3,525 per person • ' : ''}Deposit • Balance due 60 days before travel
+                          {selectedPackageData?.occupancy === 'Double' ? '$1,791 per person • ' : ''}Due today (incl. CC surcharge)
                         </p>
+                        <div className="mt-3 text-xs text-gray-500 space-y-1">
+                          <p>• 2nd deposit: April 1, 2026</p>
+                          <p>• Final balance: May 1, 2026</p>
+                        </div>
                       </button>
                     </div>
                   </motion.div>
