@@ -133,7 +133,7 @@ export default function Hero() {
                   <CountdownUnit value={countdown.seconds} label="Sec" />
                 </div>
                 <p className="text-gray-300 mt-4 text-base">
-                  Packages from <span className="text-2xl font-bold text-white">$5,555</span> per person
+                  Packages from <span className="text-2xl font-bold text-white">$5,610</span> per person
                 </p>
               </motion.div>
             </motion.div>
